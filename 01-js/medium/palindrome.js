@@ -5,6 +5,17 @@
 
 function isPalindrome(str) {
 
+  let str1 = "";
+
+  for(let i = 0; i<str.length; i++) {
+    if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z') {
+      str1 += str[i].toLowerCase();
+    }
+  }
+
+  let str2 = str1.split('').reverse().join('');
+
+  return str1 === str2;
   
 }
 
