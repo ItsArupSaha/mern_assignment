@@ -2,3 +2,16 @@
 
 We have already covered this in the second lesson, but as an easy recap try to code a counter in Javascript
 It should go up as time goes by in intervals of 1 second
+
+## Solution
+
+let count = 0;
+
+setInterval(() => {
+
+    // console.clear();
+    // console.log(count++)
+
+    process.stdout.write(`\r${count++}`);
+
+}, 1000);
