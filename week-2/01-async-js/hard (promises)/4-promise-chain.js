@@ -29,16 +29,29 @@ function wait3(t) {
     })
 }
 
-async function calculateTime(t1, t2, t3) {
+// async function calculateTime(t1, t2, t3) {
+//     let date = Date.now();
+
+//     await wait1(t1);
+//     await wait2(t2);
+//     await wait3(t3);
+
+//     let ndate = Date.now();
+
+//     return ndate - date;
+// }
+function calculateTime(t1, t2, t3) {
     let date = Date.now();
 
-    await wait1(t1);
-    await wait2(t2);
-    await wait3(t3);
+    return wait1(t1)
+        .then(() => wait2(t2))
+        .then(() => wait3(t3))
+        .then(() => {
+            let ndate = Date.now();
 
-    let ndate = Date.now();
-
-    return ndate - date;
+            return ndate - date;
+        })   
+    
 }
 
 module.exports = calculateTime;
